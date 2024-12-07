@@ -4,8 +4,14 @@ const app = express();
 //THIS SETS UP EJS AS RENDER ENGINE. HTML must be .ejs and MUST BE IN VIEWS FOLDER
 app.set('view engine','ejs');
 
-app.get("/",(req,res) => {
-    res.render("index");
+app.get("/:name/:lang",(req,res) => {
+    var name = req.params.name;
+    var lang = req.params.lang;
+    res.render("index",{
+        name: name,
+        lang: lang,
+        company: "FacchiDev"
+    });
 });
 
 app.listen(8080, ()=>{
