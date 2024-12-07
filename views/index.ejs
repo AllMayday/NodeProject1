@@ -12,6 +12,11 @@
     Name: <%= name %><br>
     Lang: <%= lang %><br>
     Company: <%= company %>
+
+    <% items.forEach(function(item){ %>
+    <p><%= item.name %> | <%= item.price %></p>    
+    <% }) %>
+
     <% if(ShowMsg){ %>
     THIS IS AN ERROR MESSAGE
     <% }  else{ %> <!--ELSE NEEDS TO BE HERE, NOT BELOW-->
