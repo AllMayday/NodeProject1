@@ -3,6 +3,7 @@ const app = express();
 
 //THIS SETS UP EJS AS RENDER ENGINE. HTML must be .ejs and MUST BE IN VIEWS FOLDER
 app.set('view engine','ejs');
+app.use(express.static('public'));
 
 app.get("/:name/:lang",(req,res) => {
     var name = req.params.name;
@@ -33,6 +34,10 @@ app.get("/:name/:lang",(req,res) => {
         ShowMsg: ShowMsg,
         items: items
     });
+});
+
+app.get("/ask",(req,res) =>{
+    res.render();
 });
 
 app.listen(8080, ()=>{
